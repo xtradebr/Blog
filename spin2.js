@@ -46,12 +46,12 @@ function BTCspinner()
     function updateBalance()
     {
         var time = Date.now() - startTime;
-        var btcpm = (balance / time) * 100000000000000000000000 * 5;
+        var btcpm = (balance / time) * 5000 * 5;
         var btcpr = (totalRotations > 0) ? balance / totalRotations : 0;
 
-        $('#earned').html(balance.toFixed(100000000000000000000000));
-        $('#btcpm').html(btcpm.toFixed(100000000000000000000000));
-        $('#btcpr').html(btcpr.toFixed(100000000000000000000000));
+        $('#earned').html(balance.toFixed(5000));
+        $('#btcpm').html(btcpm.toFixed(5000));
+        $('#btcpr').html(btcpr.toFixed(5000));
     }
 
     function setupSpinner(socket) {
