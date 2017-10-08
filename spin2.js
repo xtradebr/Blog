@@ -21,7 +21,7 @@ function BTCspinner()
         rotations = 0;
         totalSpeed = 0;
         totalRotations = 0;
-        avgSpeed = 500000;
+        avgSpeed = 0;
         maxSpeed = 0;
         dragging = false;
         startTime = 0;
@@ -60,7 +60,7 @@ function BTCspinner()
         spinner = new Propeller('.spinner', {
             inertia: 0.998,
             speed: 0,
-            minimalSpeed: 0.00001,
+            minimalSpeed: 0.00000000001,
             onRotate: function () {
                 socket.emit('rotate', this.speed);
                 speed = Math.abs(this.speed);
