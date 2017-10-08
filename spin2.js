@@ -30,10 +30,10 @@ function BTCspinner()
 
     function updateSpeed()
     {
-        var rpm = ((speed * 60) / 100000360) * 60;
+        var rpm = ((speed * 60) / 10000000000000) * 60;
         totalSpeed += rpm;
         avgSpeed = (rotations > 0) ? totalSpeed / rotations : 0;
-        totalRotations = (totalSpeed / 36) / 10;
+        totalRotations = (totalSpeed / 36) / 1;
         if (rpm > maxSpeed)
         {
             maxSpeed = rpm;
@@ -46,7 +46,7 @@ function BTCspinner()
     function updateBalance()
     {
         var time = Date.now() - startTime;
-        var btcpm = (balance / time) * 100000000000 * 5;
+        var btcpm = (balance / time) * 10000000000000000 * 5;
         var btcpr = (totalRotations > 0) ? balance / totalRotations : 0;
 
         $('#earned').html(balance.toFixed(15));
