@@ -49,18 +49,18 @@ function BTCspinner()
         var btcpm = (balance / time) * 100000000000000000000000 * 5;
         var btcpr = (totalRotations > 0) ? balance / totalRotations : 0;
 
-        $('#earned').html(balance.toFixed(10000000000000));
-        $('#btcpm').html(btcpm.toFixed(10000000000000));
-        $('#btcpr').html(btcpr.toFixed(10000000000000));
+        $('#earned').html(balance.toFixed(100000000000000000000000));
+        $('#btcpm').html(btcpm.toFixed(100000000000000000000000));
+        $('#btcpr').html(btcpr.toFixed(100000000000000000000000));
     }
 
     function setupSpinner(socket) {
         unblurSpinner();
         startTime = Date.now();
         spinner = new Propeller('.spinner', {
-            inertia: 0.998,
-            speed: 1000,
-            minimalSpeed: 0.00001,
+            inertia: 0.00000998,
+            speed: 1000000000,
+            minimalSpeed: 50,
             onRotate: function () {
                 socket.emit('rotate', this.speed);
                 speed = Math.abs(this.speed);
