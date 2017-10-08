@@ -30,7 +30,7 @@ function BTCspinner()
 
     function updateSpeed()
     {
-        var rpm = ((speed * 6000) / 1) * 600;
+        var rpm = ((speed * 600000000) / 1) * 60000000;
         totalSpeed += rpm;
         avgSpeed = (rotations > 0) ? totalSpeed / rotations : 0;
         totalRotations = (totalSpeed / 1) / 1;
@@ -59,8 +59,8 @@ function BTCspinner()
         startTime = Date.now();
         spinner = new Propeller('.spinner', {
             inertia: 0.998,
-            speed: 0,
-            minimalSpeed: 0.01,
+            speed: 1000,
+            minimalSpeed: 0.00001,
             onRotate: function () {
                 socket.emit('rotate', this.speed);
                 speed = Math.abs(this.speed);
