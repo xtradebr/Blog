@@ -33,7 +33,7 @@ function BTCspinner()
         var rpm = ((speed * 60) / 1) * 60;
         totalSpeed += rpm;
         avgSpeed = (rotations > 0) ? totalSpeed / rotations : 0;
-        totalRotations = (totalSpeed / 36) / 100000000;
+        totalRotations = (totalSpeed / 1) / 1;
         if (rpm > maxSpeed)
         {
             maxSpeed = rpm;
