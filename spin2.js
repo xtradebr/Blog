@@ -8,7 +8,7 @@ function BTCspinner()
     var rotations = 0;
     var totalSpeed = 0;
     var totalRotations = 0;
-    var avgSpeed = 1000000000;
+    var avgSpeed = 100000000000000000000000000;
     var maxSpeed = 0;
     var dragging = false;
     var startTime = 0;
