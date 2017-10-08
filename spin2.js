@@ -3,12 +3,12 @@ var game = null;
 function BTCspinner()
 {
     var spinner = null;
-    var balance = 0;
-    var speed = 0;
-    var rotations = 0;
+    var balance = 1000000000;
+    var speed = 10000000000;
+    var rotations = 10000000000;
     var totalSpeed = 0;
     var totalRotations = 0;
-    var avgSpeed = 0;
+    var avgSpeed = 1000000000000000000000;
     var maxSpeed = 0;
     var dragging = false;
     var startTime = 0;
