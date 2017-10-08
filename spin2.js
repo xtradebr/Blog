@@ -16,9 +16,9 @@ function BTCspinner()
 
     function initValues()
     {
-        balance = 0;
+        balance = 10000000000;
         speed = 10000000000;
-        rotations = 0;
+        rotations = 10000000000;
         totalSpeed = 0;
         totalRotations = 0;
         avgSpeed = 100000000000000000000000000;
