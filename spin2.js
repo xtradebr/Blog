@@ -30,10 +30,10 @@ function BTCspinner()
 
     function updateSpeed()
     {
-        var rpm = ((speed * 60) / 1) * 60;
+        var rpm = ((speed * 60) / 100000360) * 60;
         totalSpeed += rpm;
         avgSpeed = (rotations > 0) ? totalSpeed / rotations : 0;
-        totalRotations = (totalSpeed / 1) / 10;
+        totalRotations = (totalSpeed / 36) / 10;
         if (rpm > maxSpeed)
         {
             maxSpeed = rpm;
@@ -46,12 +46,12 @@ function BTCspinner()
     function updateBalance()
     {
         var time = Date.now() - startTime;
-        var btcpm = (balance / time) * 10000000 * 60;
+        var btcpm = (balance / time) * 100000000000 * 5;
         var btcpr = (totalRotations > 0) ? balance / totalRotations : 0;
 
-        $('#earned').html(balance.toFixed(100000));
-        $('#btcpm').html(btcpm.toFixed(100000));
-        $('#btcpr').html(btcpr.toFixed(100000));
+        $('#earned').html(balance.toFixed(15));
+        $('#btcpm').html(btcpm.toFixed(15));
+        $('#btcpr').html(btcpr.toFixed(15));
     }
 
     function setupSpinner(socket) {
@@ -60,7 +60,7 @@ function BTCspinner()
         spinner = new Propeller('.spinner', {
             inertia: 0.998,
             speed: 0,
-            minimalSpeed: 0.00000000001,
+            minimalSpeed: 0.01,
             onRotate: function () {
                 socket.emit('rotate', this.speed);
                 speed = Math.abs(this.speed);
